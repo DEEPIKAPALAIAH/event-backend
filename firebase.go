@@ -15,7 +15,7 @@ var firestoreClient *firestore.Client
 func initFirebase() {
 	ctx := context.Background()
 
-	opt := option.WithCredentialsFile("serviceAccountKey.json")
+	opt := option.WithCredentialsJSON([]byte(os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")))
 
 	var err error
 
